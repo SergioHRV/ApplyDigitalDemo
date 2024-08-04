@@ -11,9 +11,7 @@ import SwiftUI
 struct ADDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            let respository = DefaultArticleRepository()
-            let useCase = DefaultGetArticlesUseCase(repositry: respository)
-            let viewModel = ArticlesViewModel(getArticlesUseCase: useCase)
+            let viewModel = ArticlesViewModel(getArticlesUseCase: GetArticlesUseCaseFactory().factoryUseCase())
             ArticlesListView(viewModel: viewModel)
         }
     }

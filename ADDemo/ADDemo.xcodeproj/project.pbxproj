@@ -28,6 +28,15 @@
 		491A100F2C5F1D3400663570 /* Article+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A100E2C5F1D3400663570 /* Article+Extesion.swift */; };
 		491A10132C5F3BEA00663570 /* ArticlesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A10122C5F3BEA00663570 /* ArticlesListView.swift */; };
 		491A10152C5F3BFD00663570 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A10142C5F3BFD00663570 /* ArticlesViewModel.swift */; };
+		491A10192C5F483B00663570 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A10182C5F483B00663570 /* NetworkMonitor.swift */; };
+		491A101B2C5F4A5B00663570 /* GetArticlesUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A101A2C5F4A5B00663570 /* GetArticlesUseCaseFactory.swift */; };
+		491A101D2C5F4A8700663570 /* GetArticlesUseCaseDummyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A101C2C5F4A8700663570 /* GetArticlesUseCaseDummyFactory.swift */; };
+		491A10212C5F50BD00663570 /* ADDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 491A101F2C5F50BD00663570 /* ADDemo.xcdatamodeld */; };
+		49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F972C5FD65A0056D300 /* PersistenceController.swift */; };
+		49BD3FA32C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */; };
+		49BD3FA42C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */; };
+		49BD3FA52C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA12C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift */; };
+		49BD3FA62C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA22C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +81,15 @@
 		491A100E2C5F1D3400663570 /* Article+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+Extesion.swift"; sourceTree = "<group>"; };
 		491A10122C5F3BEA00663570 /* ArticlesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListView.swift; sourceTree = "<group>"; };
 		491A10142C5F3BFD00663570 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
+		491A10182C5F483B00663570 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		491A101A2C5F4A5B00663570 /* GetArticlesUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArticlesUseCaseFactory.swift; sourceTree = "<group>"; };
+		491A101C2C5F4A8700663570 /* GetArticlesUseCaseDummyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArticlesUseCaseDummyFactory.swift; sourceTree = "<group>"; };
+		491A10202C5F50BD00663570 /* ADDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ADDemo.xcdatamodel; sourceTree = "<group>"; };
+		49BD3F972C5FD65A0056D300 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		49BD3FA12C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteArticleIDLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		49BD3FA22C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteArticleIDLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +187,7 @@
 		491A0FEA2C5EF17A00663570 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				491A101E2C5F4FF300663570 /* PersistentStorage */,
 				491A100A2C5F0C0800663570 /* DataMapping */,
 				491A10052C5F09AF00663570 /* Repositories */,
 				491A10022C5F063200663570 /* Models */,
@@ -267,7 +286,8 @@
 		491A100D2C5F1D0400663570 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				491A100E2C5F1D3400663570 /* Article+Extesion.swift */,
+				491A10172C5F482200663570 /* Helpers */,
+				491A10162C5F481400663570 /* Extensions */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -279,6 +299,37 @@
 				491A10142C5F3BFD00663570 /* ArticlesViewModel.swift */,
 			);
 			path = ArticlesList;
+			sourceTree = "<group>";
+		};
+		491A10162C5F481400663570 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				491A100E2C5F1D3400663570 /* Article+Extesion.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		491A10172C5F482200663570 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				491A10182C5F483B00663570 /* NetworkMonitor.swift */,
+				491A101A2C5F4A5B00663570 /* GetArticlesUseCaseFactory.swift */,
+				491A101C2C5F4A8700663570 /* GetArticlesUseCaseDummyFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		491A101E2C5F4FF300663570 /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				491A101F2C5F50BD00663570 /* ADDemo.xcdatamodeld */,
+				49BD3F972C5FD65A0056D300 /* PersistenceController.swift */,
+				49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */,
+				49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */,
+				49BD3FA12C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift */,
+				49BD3FA22C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */,
+			);
+			path = PersistentStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,20 +464,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				491A10072C5F09CD00663570 /* DefaultArticleRepository.swift in Sources */,
+				491A10192C5F483B00663570 /* NetworkMonitor.swift in Sources */,
 				491A0FFD2C5EFF6600663570 /* APIEndpoint.swift in Sources */,
+				49BD3FA32C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift in Sources */,
+				49BD3FA42C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift in Sources */,
+				49BD3FA52C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift in Sources */,
+				49BD3FA62C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift in Sources */,
 				491A100C2C5F0C5C00663570 /* ArticleResponse+Mapping.swift in Sources */,
+				491A10212C5F50BD00663570 /* ADDemo.xcdatamodeld in Sources */,
 				491A100F2C5F1D3400663570 /* Article+Extesion.swift in Sources */,
 				491A10152C5F3BFD00663570 /* ArticlesViewModel.swift in Sources */,
 				491A0FBE2C5EEF6F00663570 /* ADDemoApp.swift in Sources */,
 				491A0FF52C5EF82A00663570 /* ArticleRepository.swift in Sources */,
 				491A0FFB2C5EFE0000663570 /* UrlConstant.swift in Sources */,
+				491A101D2C5F4A8700663570 /* GetArticlesUseCaseDummyFactory.swift in Sources */,
 				491A10092C5F09F700663570 /* BaseRepository.swift in Sources */,
 				491A10132C5F3BEA00663570 /* ArticlesListView.swift in Sources */,
 				491A0FF82C5EFA4400663570 /* GetArticlesUseCase.swift in Sources */,
+				491A101B2C5F4A5B00663570 /* GetArticlesUseCaseFactory.swift in Sources */,
 				491A10012C5F01EE00663570 /* HTTPStatusCode.swift in Sources */,
 				491A0FFF2C5EFFF200663570 /* Client.swift in Sources */,
 				491A0FF22C5EF75300663570 /* Article.swift in Sources */,
 				491A10042C5F075400663570 /* ArticleResponse.swift in Sources */,
+				49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +659,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -629,6 +690,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -758,6 +820,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		491A101F2C5F50BD00663570 /* ADDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				491A10202C5F50BD00663570 /* ADDemo.xcdatamodel */,
+			);
+			currentVersion = 491A10202C5F50BD00663570 /* ADDemo.xcdatamodel */;
+			name = ADDemo.xcdatamodeld;
+			path = /Users/sergio/Desktop/PruebaTecnicaApplyDigital/Demo/ApplyDigitalDemo/ADDemo/ADDemo/Data/PersistentStorage/ADDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 491A0FB22C5EEF6F00663570 /* Project object */;
 }

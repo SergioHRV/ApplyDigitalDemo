@@ -31,9 +31,7 @@ struct ArticlesListView: View {
 }
 
 #Preview {
-    let respository = DefaultArticleRepository()
-    let useCase = DefaultGetArticlesUseCase(repositry: respository)
-    let viewModel = ArticlesViewModel(getArticlesUseCase: useCase)
+    let viewModel = ArticlesViewModel(getArticlesUseCase: GetArticlesUseCaseDummyFactory().factoryPreviewUseCase())
     
     return ArticlesListView(viewModel: viewModel)
 }

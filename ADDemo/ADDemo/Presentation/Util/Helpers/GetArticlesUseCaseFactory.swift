@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+final class GetArticlesUseCaseFactory {
+    
+    func factoryUseCase() -> GetArticlesUseCase {
+        let respository = DefaultArticleRepository()
+        let useCase = DefaultGetArticlesUseCase(repositry: respository)
+        return useCase
+    }
+}
