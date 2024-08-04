@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		491A0FBE2C5EEF6F00663570 /* ADDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FBD2C5EEF6F00663570 /* ADDemoApp.swift */; };
-		491A0FC02C5EEF6F00663570 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FBF2C5EEF6F00663570 /* ContentView.swift */; };
 		491A0FC22C5EEF7100663570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491A0FC12C5EEF7100663570 /* Assets.xcassets */; };
 		491A0FC52C5EEF7100663570 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491A0FC42C5EEF7100663570 /* Preview Assets.xcassets */; };
 		491A0FCF2C5EEF7100663570 /* ADDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FCE2C5EEF7100663570 /* ADDemoTests.swift */; };
@@ -51,7 +50,6 @@
 /* Begin PBXFileReference section */
 		491A0FBA2C5EEF6F00663570 /* ADDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		491A0FBD2C5EEF6F00663570 /* ADDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADDemoApp.swift; sourceTree = "<group>"; };
-		491A0FBF2C5EEF6F00663570 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		491A0FC12C5EEF7100663570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		491A0FC42C5EEF7100663570 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		491A0FCA2C5EEF7100663570 /* ADDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +192,6 @@
 			children = (
 				491A10102C5F3AF800663570 /* ArticlesList */,
 				491A100D2C5F1D0400663570 /* Util */,
-				491A0FBF2C5EEF6F00663570 /* ContentView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -419,7 +416,6 @@
 				491A0FFD2C5EFF6600663570 /* APIEndpoint.swift in Sources */,
 				491A100C2C5F0C5C00663570 /* ArticleResponse+Mapping.swift in Sources */,
 				491A100F2C5F1D3400663570 /* Article+Extesion.swift in Sources */,
-				491A0FC02C5EEF6F00663570 /* ContentView.swift in Sources */,
 				491A10152C5F3BFD00663570 /* ArticlesViewModel.swift in Sources */,
 				491A0FBE2C5EEF6F00663570 /* ADDemoApp.swift in Sources */,
 				491A0FF52C5EF82A00663570 /* ArticleRepository.swift in Sources */,

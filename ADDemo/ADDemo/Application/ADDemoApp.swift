@@ -11,7 +11,10 @@ import SwiftUI
 struct ADDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let respository = DefaultArticleRepository()
+            let useCase = DefaultGetArticlesUseCase(repositry: respository)
+            let viewModel = ArticlesViewModel(getArticlesUseCase: useCase)
+            ArticlesListView(viewModel: viewModel)
         }
     }
 }
