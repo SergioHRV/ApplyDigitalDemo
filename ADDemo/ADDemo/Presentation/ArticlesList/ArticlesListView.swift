@@ -14,11 +14,13 @@ struct ArticlesListView: View {
     var body: some View {
         List(viewModel.articles) { item in
             Text(item.title)
+                .foregroundStyle(.green)
         }
         .refreshable {
             getArticles()
         }
         .padding()
+        .background(Color.white)
     }
     
     init(viewModel: ArticlesViewModel) {
@@ -31,7 +33,7 @@ struct ArticlesListView: View {
 }
 
 #Preview {
-    let viewModel = ArticlesViewModel(getArticlesUseCase: GetArticlesUseCaseDummyFactory().factoryPreviewUseCase())
+    let viewModel = ArticlesViewModel(dependencies: ArticlesDependenciesDummyFactory().factory())
     
     return ArticlesListView(viewModel: viewModel)
 }

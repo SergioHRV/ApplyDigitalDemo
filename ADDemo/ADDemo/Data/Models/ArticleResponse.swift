@@ -13,14 +13,16 @@ struct ArticlesResponse: Codable {
 
 struct ArticleResponse: Codable {
     let id: String
-    let title: String
-    let author: String
-    let createdAt: String
+    let title: String?
+    let otherTitle: String?
+    let author: String?
+    let createdAt: String?
     let articleUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "objectID"
         case title = "story_title"
+        case otherTitle = "title"
         case author = "author"
         case createdAt = "created_at"
         case articleUrl = "story_url"

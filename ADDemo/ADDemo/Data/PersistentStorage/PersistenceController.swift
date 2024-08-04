@@ -19,7 +19,7 @@ struct PersistenceController {
       try viewContext.save()
     } catch {
       let nsError = error as NSError
-      fatalError("Unresolved Error \(nsError), \(nsError.userInfo)")
+      print("Unresolved Error \(nsError), \(nsError.userInfo)")
     }
     return result
   }()
@@ -34,7 +34,7 @@ struct PersistenceController {
     }
     container.loadPersistentStores(completionHandler: { (storeDescription, error) in
       if let error = error as NSError? {
-        fatalError("Unresolved error \(error), \(error.userInfo)")
+        print("Unresolved error \(error), \(error.userInfo)")
       }
     })
     container.viewContext.automaticallyMergesChangesFromParent = true

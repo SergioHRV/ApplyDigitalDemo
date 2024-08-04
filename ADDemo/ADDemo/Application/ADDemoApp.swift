@@ -11,7 +11,7 @@ import SwiftUI
 struct ADDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            let viewModel = ArticlesViewModel(getArticlesUseCase: GetArticlesUseCaseFactory().factoryUseCase())
+            let viewModel = ArticlesViewModel(dependencies: ArticlesDependenciesFactory().factory())
             ArticlesListView(viewModel: viewModel)
         }
     }

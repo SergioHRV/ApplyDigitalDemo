@@ -18,10 +18,11 @@ extension ArticleResponse {
     }
 
     func toDomain() -> Article {
-        let date = dateFormatter.date(from: createdAt) ?? Date()
+        let date = dateFormatter.date(from: createdAt ?? "") ?? Date()
+        let selectedTitle = title ?? otherTitle
         let article = Article(id: id,
-                              title: title,
-                              author: author,
+                              title: selectedTitle ?? "",
+                              author: author ?? "",
                               createdAt: date,
                               articleUrl: articleUrl ?? "")
         return article

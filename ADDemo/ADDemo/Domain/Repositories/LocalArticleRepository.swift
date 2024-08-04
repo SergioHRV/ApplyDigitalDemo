@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol LocalArticleRepository {
+    func getArticles() -> [Article]
+    func saveArticles(_ articles: [Article])
+    func getDeletedArticlesIds() -> [String]
+}

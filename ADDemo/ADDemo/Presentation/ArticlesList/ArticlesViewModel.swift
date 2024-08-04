@@ -8,29 +8,39 @@
 import SwiftUI
 
 final class ArticlesViewModel: ObservableObject {
-    
+    struct Dependencies {
+        let getArticlesUseCase: GetArticlesUseCase
+        let getLocalArticlesUseCase: GetLocalArticlesUseCase
+        let saveArticlesUseCase: SaveLocalArticlesUseCase
+        let networkMonitor: NetworkMonitor
+    }
+
     @Published var articles: [Article] = []
-    private let getArticlesUseCase: GetArticlesUseCase
-    private var networkMonitor: NetworkMonitor = NetworkMonitor()
+    private let dependencies: Dependencies
     
-    init(getArticlesUseCase: GetArticlesUseCase) {
-        self.getArticlesUseCase = getArticlesUseCase
+    init(dependencies: Dependencies) {
+        self.dependencies = dependencies
     }
     
     func getArticles() {
         Task {
             do {
-                if networkMonitor.isConnected {
-                    let articlesResponse = try await getArticlesUseCase.getArticles()
-                    await MainActor.run {
-                        articles = articlesResponse
-                    }
+                if dependencies.networkMonitor.isConnected {
+                    let articlesResponse = try await dependencies.getArticlesUseCase.getArticles()
+                    dependencies.saveArticlesUseCase.saveArticles(articlesResponse)
+                    await updateArticles(withArticles: articlesResponse)
                 }else {
-                    //DATABASE call
+                    let localArticles = dependencies.getLocalArticlesUseCase.getLocalArticles()
+                    await updateArticles(withArticles: localArticles)
                 }
             } catch {
-                print("error")
+                let nsError = error as NSError
+                print("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
+    }
+    
+    @MainActor private func updateArticles(withArticles newArticles: [Article]) {
+        articles = newArticles
     }
 }

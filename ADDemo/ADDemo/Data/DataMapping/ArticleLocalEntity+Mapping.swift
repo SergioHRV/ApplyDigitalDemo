@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+extension ArticleLocalEntity {
+    
+    func toDomain() -> Article {
+        let article = Article(id: id,
+                              title: title,
+                              author: author,
+                              createdAt: createdAt,
+                              articleUrl: url ?? "")
+        return article
+    }
+}
