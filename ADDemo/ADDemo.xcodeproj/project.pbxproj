@@ -18,6 +18,17 @@
 		491A0FF22C5EF75300663570 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FF12C5EF75300663570 /* Article.swift */; };
 		491A0FF52C5EF82A00663570 /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FF42C5EF82A00663570 /* ArticleRepository.swift */; };
 		491A0FF82C5EFA4400663570 /* GetArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FF72C5EFA4400663570 /* GetArticlesUseCase.swift */; };
+		491A0FFB2C5EFE0000663570 /* UrlConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FFA2C5EFE0000663570 /* UrlConstant.swift */; };
+		491A0FFD2C5EFF6600663570 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FFC2C5EFF6600663570 /* APIEndpoint.swift */; };
+		491A0FFF2C5EFFF200663570 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FFE2C5EFFF200663570 /* Client.swift */; };
+		491A10012C5F01EE00663570 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A10002C5F01EE00663570 /* HTTPStatusCode.swift */; };
+		491A10042C5F075400663570 /* ArticleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A10032C5F075400663570 /* ArticleResponse.swift */; };
+		491A10072C5F09CD00663570 /* DefaultArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A10062C5F09CD00663570 /* DefaultArticleRepository.swift */; };
+		491A10092C5F09F700663570 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A10082C5F09F700663570 /* BaseRepository.swift */; };
+		491A100C2C5F0C5C00663570 /* ArticleResponse+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A100B2C5F0C5C00663570 /* ArticleResponse+Mapping.swift */; };
+		491A100F2C5F1D3400663570 /* Article+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A100E2C5F1D3400663570 /* Article+Extesion.swift */; };
+		491A10132C5F3BEA00663570 /* ArticlesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A10122C5F3BEA00663570 /* ArticlesListView.swift */; };
+		491A10152C5F3BFD00663570 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A10142C5F3BFD00663570 /* ArticlesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +63,17 @@
 		491A0FF12C5EF75300663570 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		491A0FF42C5EF82A00663570 /* ArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
 		491A0FF72C5EFA4400663570 /* GetArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArticlesUseCase.swift; sourceTree = "<group>"; };
+		491A0FFA2C5EFE0000663570 /* UrlConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstant.swift; sourceTree = "<group>"; };
+		491A0FFC2C5EFF6600663570 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		491A0FFE2C5EFFF200663570 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		491A10002C5F01EE00663570 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		491A10032C5F075400663570 /* ArticleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleResponse.swift; sourceTree = "<group>"; };
+		491A10062C5F09CD00663570 /* DefaultArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultArticleRepository.swift; sourceTree = "<group>"; };
+		491A10082C5F09F700663570 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		491A100B2C5F0C5C00663570 /* ArticleResponse+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleResponse+Mapping.swift"; sourceTree = "<group>"; };
+		491A100E2C5F1D3400663570 /* Article+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+Extesion.swift"; sourceTree = "<group>"; };
+		491A10122C5F3BEA00663570 /* ArticlesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListView.swift; sourceTree = "<group>"; };
+		491A10142C5F3BFD00663570 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +171,10 @@
 		491A0FEA2C5EF17A00663570 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				491A100A2C5F0C0800663570 /* DataMapping */,
+				491A10052C5F09AF00663570 /* Repositories */,
+				491A10022C5F063200663570 /* Models */,
+				491A0FF92C5EFD5A00663570 /* ApiClient */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -166,6 +192,8 @@
 		491A0FEC2C5EF18900663570 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				491A10102C5F3AF800663570 /* ArticlesList */,
+				491A100D2C5F1D0400663570 /* Util */,
 				491A0FBF2C5EEF6F00663570 /* ContentView.swift */,
 			);
 			path = Presentation;
@@ -201,6 +229,59 @@
 				491A0FF72C5EFA4400663570 /* GetArticlesUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		491A0FF92C5EFD5A00663570 /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				491A0FFA2C5EFE0000663570 /* UrlConstant.swift */,
+				491A0FFC2C5EFF6600663570 /* APIEndpoint.swift */,
+				491A0FFE2C5EFFF200663570 /* Client.swift */,
+				491A10002C5F01EE00663570 /* HTTPStatusCode.swift */,
+			);
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		491A10022C5F063200663570 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				491A10032C5F075400663570 /* ArticleResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		491A10052C5F09AF00663570 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				491A10062C5F09CD00663570 /* DefaultArticleRepository.swift */,
+				491A10082C5F09F700663570 /* BaseRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		491A100A2C5F0C0800663570 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				491A100B2C5F0C5C00663570 /* ArticleResponse+Mapping.swift */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		491A100D2C5F1D0400663570 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				491A100E2C5F1D3400663570 /* Article+Extesion.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		491A10102C5F3AF800663570 /* ArticlesList */ = {
+			isa = PBXGroup;
+			children = (
+				491A10122C5F3BEA00663570 /* ArticlesListView.swift */,
+				491A10142C5F3BFD00663570 /* ArticlesViewModel.swift */,
+			);
+			path = ArticlesList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,11 +415,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491A10072C5F09CD00663570 /* DefaultArticleRepository.swift in Sources */,
+				491A0FFD2C5EFF6600663570 /* APIEndpoint.swift in Sources */,
+				491A100C2C5F0C5C00663570 /* ArticleResponse+Mapping.swift in Sources */,
+				491A100F2C5F1D3400663570 /* Article+Extesion.swift in Sources */,
 				491A0FC02C5EEF6F00663570 /* ContentView.swift in Sources */,
+				491A10152C5F3BFD00663570 /* ArticlesViewModel.swift in Sources */,
 				491A0FBE2C5EEF6F00663570 /* ADDemoApp.swift in Sources */,
 				491A0FF52C5EF82A00663570 /* ArticleRepository.swift in Sources */,
+				491A0FFB2C5EFE0000663570 /* UrlConstant.swift in Sources */,
+				491A10092C5F09F700663570 /* BaseRepository.swift in Sources */,
+				491A10132C5F3BEA00663570 /* ArticlesListView.swift in Sources */,
 				491A0FF82C5EFA4400663570 /* GetArticlesUseCase.swift in Sources */,
+				491A10012C5F01EE00663570 /* HTTPStatusCode.swift in Sources */,
+				491A0FFF2C5EFFF200663570 /* Client.swift in Sources */,
 				491A0FF22C5EF75300663570 /* Article.swift in Sources */,
+				491A10042C5F075400663570 /* ArticleResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
