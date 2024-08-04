@@ -55,6 +55,12 @@ extension ArticleLocalEntity {
             return []
         }
     }
+    
+    static func deleteAll(using managedObjectContext: NSManagedObjectContext) throws {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "ArticleLocalEntity")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        try managedObjectContext.execute(deleteRequest)
+    }
 }
 
 extension ArticleLocalEntity : Identifiable {

@@ -21,13 +21,19 @@ final class DefaultLocalArticleRepository: LocalArticleRepository {
     }
     
     func saveArticles(_ articles: [Article]) {
-        for article in articles {
-            ArticleLocalEntity.createWith(id: article.id,
-                                          title: article.title,
-                                          author: article.author,
-                                          createdAtDate: article.createdAt,
-                                          url: article.articleUrl,
-                                          using: persistence.container.viewContext)
+        do {
+            try ArticleLocalEntity.deleteAll(using: persistence.container.viewContext)
+            for article in articles {
+                ArticleLocalEntity.createWith(id: article.id,
+                                              title: article.title,
+                                              author: article.author,
+                                              createdAtDate: article.createdAt,
+                                              url: article.articleUrl,
+                                              using: persistence.container.viewContext)
+            }
+        } catch {
+            let nsError = error as NSError
+            print("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
     
