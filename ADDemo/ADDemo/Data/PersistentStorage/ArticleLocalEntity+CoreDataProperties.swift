@@ -37,7 +37,7 @@ extension ArticleLocalEntity {
     
     static func sortedFetchRequest(using managedObjectContext: NSManagedObjectContext) -> [ArticleLocalEntity] {
         let request = NSFetchRequest<ArticleLocalEntity>(entityName: "ArticleLocalEntity");
-        let dateSortDescription = NSSortDescriptor(key: "createdAt", ascending: true)
+        let dateSortDescription = NSSortDescriptor(key: "createdAt", ascending: false)
         request.sortDescriptors = [dateSortDescription]
         
         do {
