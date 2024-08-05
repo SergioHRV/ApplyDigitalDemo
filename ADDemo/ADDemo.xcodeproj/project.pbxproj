@@ -10,7 +10,6 @@
 		491A0FBE2C5EEF6F00663570 /* ADDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FBD2C5EEF6F00663570 /* ADDemoApp.swift */; };
 		491A0FC22C5EEF7100663570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491A0FC12C5EEF7100663570 /* Assets.xcassets */; };
 		491A0FC52C5EEF7100663570 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491A0FC42C5EEF7100663570 /* Preview Assets.xcassets */; };
-		491A0FCF2C5EEF7100663570 /* ADDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FCE2C5EEF7100663570 /* ADDemoTests.swift */; };
 		491A0FD92C5EEF7100663570 /* ADDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FD82C5EEF7100663570 /* ADDemoUITests.swift */; };
 		491A0FDB2C5EEF7100663570 /* ADDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FDA2C5EEF7100663570 /* ADDemoUITestsLaunchTests.swift */; };
 		491A0FEF2C5EF36300663570 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491A0FEE2C5EF36300663570 /* LaunchScreen.storyboard */; };
@@ -35,6 +34,8 @@
 		494B01202C6076D300CAAECB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B011F2C6076D300CAAECB /* Date+Extension.swift */; };
 		494B01222C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B01212C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift */; };
 		494B01252C608C1100CAAECB /* ArticleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B01242C608C1100CAAECB /* ArticleFilter.swift */; };
+		498394102C61957F00BD8893 /* ArticleFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983940F2C61957F00BD8893 /* ArticleFilterTests.swift */; };
+		498394122C6197D200BD8893 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394112C6197D200BD8893 /* TestConstants.swift */; };
 		49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F972C5FD65A0056D300 /* PersistenceController.swift */; };
 		49BD3FA32C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */; };
 		49BD3FA42C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */; };
@@ -71,7 +72,6 @@
 		491A0FC12C5EEF7100663570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		491A0FC42C5EEF7100663570 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		491A0FCA2C5EEF7100663570 /* ADDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		491A0FCE2C5EEF7100663570 /* ADDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADDemoTests.swift; sourceTree = "<group>"; };
 		491A0FD42C5EEF7100663570 /* ADDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		491A0FD82C5EEF7100663570 /* ADDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADDemoUITests.swift; sourceTree = "<group>"; };
 		491A0FDA2C5EEF7100663570 /* ADDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -97,6 +97,9 @@
 		494B011F2C6076D300CAAECB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		494B01212C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDeletedArticleIdUseCase.swift; sourceTree = "<group>"; };
 		494B01242C608C1100CAAECB /* ArticleFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFilter.swift; sourceTree = "<group>"; };
+		4983940E2C61957E00BD8893 /* ADDemoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADDemoTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		4983940F2C61957F00BD8893 /* ArticleFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFilterTests.swift; sourceTree = "<group>"; };
+		498394112C6197D200BD8893 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		49BD3F972C5FD65A0056D300 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -179,7 +182,8 @@
 		491A0FCD2C5EEF7100663570 /* ADDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				491A0FCE2C5EEF7100663570 /* ADDemoTests.swift */,
+				4983940C2C61950300BD8893 /* Domain */,
+				4983940B2C6194EB00BD8893 /* Constans */,
 			);
 			path = ADDemoTests;
 			sourceTree = "<group>";
@@ -367,6 +371,31 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		4983940B2C6194EB00BD8893 /* Constans */ = {
+			isa = PBXGroup;
+			children = (
+				498394112C6197D200BD8893 /* TestConstants.swift */,
+			);
+			path = Constans;
+			sourceTree = "<group>";
+		};
+		4983940C2C61950300BD8893 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4983940D2C61950D00BD8893 /* Util */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		4983940D2C61950D00BD8893 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4983940E2C61957E00BD8893 /* ADDemoTests-Bridging-Header.h */,
+				4983940F2C61957F00BD8893 /* ArticleFilterTests.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		49BD3FB12C6036EF0056D300 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +475,7 @@
 					};
 					491A0FC92C5EEF7100663570 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 						TestTargetID = 491A0FB92C5EEF6F00663570;
 					};
 					491A0FD32C5EEF7100663570 = {
@@ -546,7 +576,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491A0FCF2C5EEF7100663570 /* ADDemoTests.swift in Sources */,
+				498394102C61957F00BD8893 /* ArticleFilterTests.swift in Sources */,
+				498394122C6197D200BD8893 /* TestConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,9 +750,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SergioRamirezPersonal.ADDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -750,9 +785,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SergioRamirezPersonal.ADDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -761,17 +800,24 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FJ869ZB2T8;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SergioRamirezPersonal.ADDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ADDemoTests/Domain/Util/ADDemoTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ADDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ADDemo";
 			};
 			name = Debug;
@@ -781,17 +827,23 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FJ869ZB2T8;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SergioRamirezPersonal.ADDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ADDemoTests/Domain/Util/ADDemoTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ADDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ADDemo";
 			};
 			name = Release;
