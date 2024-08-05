@@ -10,17 +10,36 @@ import SwiftUI
 struct ArticlesListView: View {
     
     @ObservedObject private var viewModel: ArticlesViewModel
+    @State private var isFirsTime = true
     
     var body: some View {
-        List(viewModel.articles) { item in
-            Text(item.title)
-                .foregroundStyle(.green)
+        
+        List {
+            ForEach(viewModel.articles, id: \.self) { article in
+                if let url = URL(string: article.articleUrl) {
+                    NavigationLink {
+                        WebView(url)
+                    } label: {
+                        ArticleRow(article: article)
+                    }
+                }else {
+                    ArticleRow(article: article)
+                }
+            }
+            .onDelete(perform: delete)
+            .listRowInsets(.none)
         }
+        .environment(\.defaultMinListRowHeight, 90)
+        .listStyle(.plain)
         .refreshable {
             getArticles()
         }
-        .padding()
-        .background(Color.white)
+        .onAppear(perform: {
+            if isFirsTime {
+                isFirsTime = false
+                getArticles()
+            }
+        })
     }
     
     init(viewModel: ArticlesViewModel) {
@@ -29,6 +48,32 @@ struct ArticlesListView: View {
     
     private func getArticles() {
         viewModel.getArticles()
+    }
+    
+    private func delete(at offsets: IndexSet) {
+        viewModel.deleteArticle(at: offsets)
+        
+    }
+
+}
+
+struct ArticleRow: View {
+    
+    let article: Article
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(article.title)
+                .font(.system(size: 16, weight: .semibold))
+            
+            HStack {
+                Text(article.author)
+                
+                Text(article.createdAt.timeAgo())
+            }
+            .font(.system(size: 10, weight: .regular))
+            .foregroundStyle(.gray)
+        }
     }
 }
 

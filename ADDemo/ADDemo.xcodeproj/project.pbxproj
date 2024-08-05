@@ -32,6 +32,7 @@
 		491A101B2C5F4A5B00663570 /* ArticlesDependenciesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A101A2C5F4A5B00663570 /* ArticlesDependenciesFactory.swift */; };
 		491A101D2C5F4A8700663570 /* ArticlesDependenciesDummyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A101C2C5F4A8700663570 /* ArticlesDependenciesDummyFactory.swift */; };
 		491A10212C5F50BD00663570 /* ADDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 491A101F2C5F50BD00663570 /* ADDemo.xcdatamodeld */; };
+		494B01202C6076D300CAAECB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B011F2C6076D300CAAECB /* Date+Extension.swift */; };
 		49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F972C5FD65A0056D300 /* PersistenceController.swift */; };
 		49BD3FA32C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */; };
 		49BD3FA42C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */; };
@@ -42,6 +43,7 @@
 		49BD3FAC2C5FEEBE0056D300 /* ArticleLocalEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FAB2C5FEEBE0056D300 /* ArticleLocalEntity+Mapping.swift */; };
 		49BD3FAE2C5FF0370056D300 /* GetLocalArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FAD2C5FF0370056D300 /* GetLocalArticlesUseCase.swift */; };
 		49BD3FB02C5FFEBF0056D300 /* SaveLocalArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FAF2C5FFEBF0056D300 /* SaveLocalArticlesUseCase.swift */; };
+		49BD3FB32C60383C0056D300 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FB22C60383C0056D300 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,7 @@
 		491A101A2C5F4A5B00663570 /* ArticlesDependenciesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDependenciesFactory.swift; sourceTree = "<group>"; };
 		491A101C2C5F4A8700663570 /* ArticlesDependenciesDummyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDependenciesDummyFactory.swift; sourceTree = "<group>"; };
 		491A10202C5F50BD00663570 /* ADDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ADDemo.xcdatamodel; sourceTree = "<group>"; };
+		494B011F2C6076D300CAAECB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		49BD3F972C5FD65A0056D300 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		49BD3FAB2C5FEEBE0056D300 /* ArticleLocalEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+Mapping.swift"; sourceTree = "<group>"; };
 		49BD3FAD2C5FF0370056D300 /* GetLocalArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalArticlesUseCase.swift; sourceTree = "<group>"; };
 		49BD3FAF2C5FFEBF0056D300 /* SaveLocalArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLocalArticlesUseCase.swift; sourceTree = "<group>"; };
+		49BD3FB22C60383C0056D300 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +223,7 @@
 		491A0FEC2C5EF18900663570 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				49BD3FB12C6036EF0056D300 /* WebView */,
 				491A10102C5F3AF800663570 /* ArticlesList */,
 				491A100D2C5F1D0400663570 /* Util */,
 			);
@@ -320,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				491A100E2C5F1D3400663570 /* Article+Extesion.swift */,
+				494B011F2C6076D300CAAECB /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +351,14 @@
 				49BD3FA22C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */,
 			);
 			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		49BD3FB12C6036EF0056D300 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				49BD3FB22C60383C0056D300 /* WebView.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +505,7 @@
 				491A100F2C5F1D3400663570 /* Article+Extesion.swift in Sources */,
 				491A10152C5F3BFD00663570 /* ArticlesViewModel.swift in Sources */,
 				491A0FBE2C5EEF6F00663570 /* ADDemoApp.swift in Sources */,
+				494B01202C6076D300CAAECB /* Date+Extension.swift in Sources */,
 				491A0FF52C5EF82A00663570 /* ArticleRepository.swift in Sources */,
 				49BD3FAC2C5FEEBE0056D300 /* ArticleLocalEntity+Mapping.swift in Sources */,
 				491A0FFB2C5EFE0000663570 /* UrlConstant.swift in Sources */,
@@ -499,6 +514,7 @@
 				49BD3FA82C5FE4E00056D300 /* LocalArticleRepository.swift in Sources */,
 				491A10092C5F09F700663570 /* BaseRepository.swift in Sources */,
 				491A10132C5F3BEA00663570 /* ArticlesListView.swift in Sources */,
+				49BD3FB32C60383C0056D300 /* WebView.swift in Sources */,
 				491A0FF82C5EFA4400663570 /* GetArticlesUseCase.swift in Sources */,
 				491A101B2C5F4A5B00663570 /* ArticlesDependenciesFactory.swift in Sources */,
 				49BD3FAA2C5FE5AB0056D300 /* DefaultLocalArticleRepository.swift in Sources */,

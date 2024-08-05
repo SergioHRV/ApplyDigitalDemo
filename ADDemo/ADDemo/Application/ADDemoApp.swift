@@ -11,8 +11,10 @@ import SwiftUI
 struct ADDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            let viewModel = ArticlesViewModel(dependencies: ArticlesDependenciesFactory().factory())
-            ArticlesListView(viewModel: viewModel)
+            NavigationStack {
+                let viewModel = ArticlesViewModel(dependencies: ArticlesDependenciesFactory().factory())
+                ArticlesListView(viewModel: viewModel)
+            }
         }
     }
 }

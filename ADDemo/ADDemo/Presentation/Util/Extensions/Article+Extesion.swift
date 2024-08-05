@@ -7,4 +7,12 @@
 
 import Foundation
 
-extension Article: Identifiable {}
+extension Article: Hashable, Identifiable {
+    static func == (lhs: Article, rhs: Article) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}

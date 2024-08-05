@@ -40,6 +40,14 @@ final class ArticlesViewModel: ObservableObject {
         }
     }
     
+    func deleteArticle(at offsets: IndexSet) {
+        let idsToDelete = offsets.map { articles[$0].id }
+        guard let idToDelete = idsToDelete.first else {
+            return
+        }
+        articles.remove(atOffsets: offsets)
+    }
+    
     @MainActor private func updateArticles(withArticles newArticles: [Article]) {
         articles = newArticles
     }
