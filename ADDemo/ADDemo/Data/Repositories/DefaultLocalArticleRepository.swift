@@ -9,7 +9,11 @@ import Foundation
 
 final class DefaultLocalArticleRepository: LocalArticleRepository {
     
-    let persistence = PersistenceController.shared
+    let persistence: PersistenceController
+
+    init(persistenceController: PersistenceController = PersistenceController.shared) {
+        persistence = persistenceController
+    }
     
     func getArticles() -> [Article] {
         let localArticles = ArticleLocalEntity.sortedFetchRequest(using: persistence.container.viewContext)

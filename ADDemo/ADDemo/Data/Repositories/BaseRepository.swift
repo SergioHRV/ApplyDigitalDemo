@@ -8,8 +8,8 @@
 import Foundation
 
 class BaseRepository {
-    public var client: APIClient
-    public init(client: APIClient = Client()) {
+    let client: APIClient
+    init(client: APIClient = Client()) {
         self.client = client
     }
 }
