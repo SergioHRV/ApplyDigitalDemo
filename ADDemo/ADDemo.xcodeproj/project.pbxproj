@@ -33,6 +33,8 @@
 		491A101D2C5F4A8700663570 /* ArticlesDependenciesDummyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A101C2C5F4A8700663570 /* ArticlesDependenciesDummyFactory.swift */; };
 		491A10212C5F50BD00663570 /* ADDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 491A101F2C5F50BD00663570 /* ADDemo.xcdatamodeld */; };
 		494B01202C6076D300CAAECB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B011F2C6076D300CAAECB /* Date+Extension.swift */; };
+		494B01222C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B01212C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift */; };
+		494B01252C608C1100CAAECB /* ArticleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B01242C608C1100CAAECB /* ArticleFilter.swift */; };
 		49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F972C5FD65A0056D300 /* PersistenceController.swift */; };
 		49BD3FA32C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */; };
 		49BD3FA42C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */; };
@@ -93,6 +95,8 @@
 		491A101C2C5F4A8700663570 /* ArticlesDependenciesDummyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDependenciesDummyFactory.swift; sourceTree = "<group>"; };
 		491A10202C5F50BD00663570 /* ADDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ADDemo.xcdatamodel; sourceTree = "<group>"; };
 		494B011F2C6076D300CAAECB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		494B01212C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDeletedArticleIdUseCase.swift; sourceTree = "<group>"; };
+		494B01242C608C1100CAAECB /* ArticleFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFilter.swift; sourceTree = "<group>"; };
 		49BD3F972C5FD65A0056D300 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		491A0FEB2C5EF18000663570 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				494B01232C608BF000CAAECB /* Util */,
 				491A0FF62C5EF8F200663570 /* UseCases */,
 				491A0FF32C5EF7FC00663570 /* Repositories */,
 				491A0FF02C5EF6F400663570 /* Entities */,
@@ -261,6 +266,7 @@
 				491A0FF72C5EFA4400663570 /* GetArticlesUseCase.swift */,
 				49BD3FAD2C5FF0370056D300 /* GetLocalArticlesUseCase.swift */,
 				49BD3FAF2C5FFEBF0056D300 /* SaveLocalArticlesUseCase.swift */,
+				494B01212C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -351,6 +357,14 @@
 				49BD3FA22C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */,
 			);
 			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		494B01232C608BF000CAAECB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				494B01242C608C1100CAAECB /* ArticleFilter.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		49BD3FB12C6036EF0056D300 /* WebView */ = {
@@ -497,6 +511,7 @@
 				491A0FFD2C5EFF6600663570 /* APIEndpoint.swift in Sources */,
 				49BD3FA32C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift in Sources */,
 				49BD3FA42C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift in Sources */,
+				494B01252C608C1100CAAECB /* ArticleFilter.swift in Sources */,
 				49BD3FA52C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift in Sources */,
 				49BD3FA62C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift in Sources */,
 				491A100C2C5F0C5C00663570 /* ArticleResponse+Mapping.swift in Sources */,
@@ -512,6 +527,7 @@
 				49BD3FAE2C5FF0370056D300 /* GetLocalArticlesUseCase.swift in Sources */,
 				491A101D2C5F4A8700663570 /* ArticlesDependenciesDummyFactory.swift in Sources */,
 				49BD3FA82C5FE4E00056D300 /* LocalArticleRepository.swift in Sources */,
+				494B01222C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift in Sources */,
 				491A10092C5F09F700663570 /* BaseRepository.swift in Sources */,
 				491A10132C5F3BEA00663570 /* ArticlesListView.swift in Sources */,
 				49BD3FB32C60383C0056D300 /* WebView.swift in Sources */,

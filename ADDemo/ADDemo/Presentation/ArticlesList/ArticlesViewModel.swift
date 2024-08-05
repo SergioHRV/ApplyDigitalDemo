@@ -12,6 +12,7 @@ final class ArticlesViewModel: ObservableObject {
         let getArticlesUseCase: GetArticlesUseCase
         let getLocalArticlesUseCase: GetLocalArticlesUseCase
         let saveArticlesUseCase: SaveLocalArticlesUseCase
+        let saveDeletedArticleIdUseCase: SaveDeletedArticleIdUseCase
         let networkMonitor: NetworkMonitor
     }
 
@@ -45,6 +46,7 @@ final class ArticlesViewModel: ObservableObject {
         guard let idToDelete = idsToDelete.first else {
             return
         }
+        dependencies.saveDeletedArticleIdUseCase.addDeletedArticleId(idToDelete)
         articles.remove(atOffsets: offsets)
     }
     

@@ -17,23 +17,16 @@ extension ArticleLocalEntity {
     @NSManaged public var createdAt: Date
     @NSManaged public var url: String?
     
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ArticleLocalEntity> {
-        return NSFetchRequest<ArticleLocalEntity>(entityName: "ArticleLocalEntity")
-    }
-    
-    static func createWith(id: String,
-                           title: String,
-                           author: String,
-                           createdAtDate: Date,
-                           url: String?,
-                           using managedObjectContext: NSManagedObjectContext) {
-        
-        let article = ArticleLocalEntity(context: managedObjectContext)
-        article.id = id
-        article.title = title
-        article.author = author
-        article.createdAt = createdAtDate
-        article.url = url
+    static func saveArticles(articles: [Article],
+                             using managedObjectContext: NSManagedObjectContext) {
+        for article in articles {
+            let newArticle = ArticleLocalEntity(context: managedObjectContext)
+            newArticle.id = article.id
+            newArticle.title = article.title
+            newArticle.author = article.author
+            newArticle.createdAt = article.createdAt
+            newArticle.url = article.articleUrl
+        }
         do {
             try managedObjectContext.save()
         } catch {

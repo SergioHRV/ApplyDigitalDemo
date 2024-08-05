@@ -23,21 +23,20 @@ final class DefaultLocalArticleRepository: LocalArticleRepository {
     func saveArticles(_ articles: [Article]) {
         do {
             try ArticleLocalEntity.deleteAll(using: persistence.container.viewContext)
-            for article in articles {
-                ArticleLocalEntity.createWith(id: article.id,
-                                              title: article.title,
-                                              author: article.author,
-                                              createdAtDate: article.createdAt,
-                                              url: article.articleUrl,
-                                              using: persistence.container.viewContext)
-            }
+            ArticleLocalEntity.saveArticles(articles: articles, using: persistence.container.viewContext)
         } catch {
             let nsError = error as NSError
             print("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
     
+    func addDeletedArticleId(_ articleId: String) {
+        DeleteArticleIDLocalEntity.saveArticleId(articleId: articleId, using: persistence.container.viewContext)
+    }
+    
     func getDeletedArticlesIds() -> [String] {
-        return []
+        let deleteArticlesIDsLocalEntitys = DeleteArticleIDLocalEntity.basicFetchRequest(using: persistence.container.viewContext)
+        let deletedIds = deleteArticlesIDsLocalEntitys.map { $0.id ?? "" }
+        return deletedIds
     }
 }

@@ -11,13 +11,15 @@ final class ArticlesDependenciesDummyFactory {
     
     func factory() -> ArticlesViewModel.Dependencies {
         let respository = DummyArticleRepository()
-        let getArticles = DefaultGetArticlesUseCase(repositry: respository)
+        let getArticles = DefaultGetArticlesUseCase(repositry: respository, localRepositry: respository)
         let getLocalArticles = DefaultGetLocalArticlesUseCase(repositry: respository)
         let saveArticles = DefaultSaveLocalArticlesUseCase(repositry: respository)
+        let deleteArticles = DefaultSaveDeletedArticleIdUseCase(repositry: respository)
         let monitor = DummyNetworkMonitor()
         let dependencies = ArticlesViewModel.Dependencies(getArticlesUseCase: getArticles,
                                                           getLocalArticlesUseCase: getLocalArticles,
-                                                          saveArticlesUseCase: saveArticles,
+                                                          saveArticlesUseCase: saveArticles, 
+                                                          saveDeletedArticleIdUseCase: deleteArticles,
                                                           networkMonitor: monitor)
         return dependencies
     }
@@ -27,14 +29,13 @@ final class DummyArticleRepository: ArticleRepository, LocalArticleRepository {
     func getArticles() -> [Article] {
         return dummyArticles()
     }
-    
-    func saveArticles(_ articles: [Article]) {}
-    
-    func getDeletedArticlesIds() -> [String] { [] }
-    
     func getArticles() async throws -> [Article] {
         return dummyArticles()
     }
+    
+    func saveArticles(_ articles: [Article]) {}
+    func addDeletedArticleId(_ articleId: String) {}
+    func getDeletedArticlesIds() -> [String] { [] }
     
     private func dummyArticles() -> [Article] {
         var articles: [Article] = []

@@ -20,7 +20,8 @@ final class DefaultGetLocalArticlesUseCase : GetLocalArticlesUseCase {
     }
     
     func getLocalArticles() -> [Article] {
+        let deletedIds = repositry.getDeletedArticlesIds()
         let articles = repositry.getArticles()
-        return articles
+        return ArticleFilter.filter(articles: articles, contains: deletedIds)
     }
 }

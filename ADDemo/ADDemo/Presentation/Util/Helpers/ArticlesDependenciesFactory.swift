@@ -12,13 +12,15 @@ final class ArticlesDependenciesFactory {
     func factory() -> ArticlesViewModel.Dependencies {
         let respository = DefaultArticleRepository()
         let localRepository = DefaultLocalArticleRepository()
-        let getArticles = DefaultGetArticlesUseCase(repositry: respository)
+        let getArticles = DefaultGetArticlesUseCase(repositry: respository, localRepositry: localRepository)
         let getLocalArticles = DefaultGetLocalArticlesUseCase(repositry: localRepository)
         let saveArticles = DefaultSaveLocalArticlesUseCase(repositry: localRepository)
+        let deleteArticles = DefaultSaveDeletedArticleIdUseCase(repositry: localRepository)
         let monitor = DefaultNetworkMonitor()
         let dependencies = ArticlesViewModel.Dependencies(getArticlesUseCase: getArticles,
                                                           getLocalArticlesUseCase: getLocalArticles,
-                                                          saveArticlesUseCase: saveArticles,
+                                                          saveArticlesUseCase: saveArticles, 
+                                                          saveDeletedArticleIdUseCase: deleteArticles,
                                                           networkMonitor: monitor)
         return dependencies
     }
