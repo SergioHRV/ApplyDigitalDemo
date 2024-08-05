@@ -10,9 +10,8 @@ import Foundation
 extension ArticleResponse {
     
     private var dateFormatter: DateFormatter {
-        //"2024-08-03T23:36:19Z"
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-ddTHH:mm:ssZ"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         formatter.locale = Locale(identifier: "en_US_POSIX")
         return formatter
     }
