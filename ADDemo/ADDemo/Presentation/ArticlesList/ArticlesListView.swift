@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArticlesListView: View {
-    
+    @Environment(DefaultNetworkMonitor.self) private var newtworkMonitor
     @ObservedObject private var viewModel: ArticlesViewModel
     @State private var isFirsTime = true
     
@@ -16,7 +16,8 @@ struct ArticlesListView: View {
         
         List {
             ForEach(viewModel.articles, id: \.self) { article in
-                if let url = URL(string: article.articleUrl) {
+                if let url = URL(string: article.articleUrl),
+                   newtworkMonitor.isConnected {
                     NavigationLink {
                         WebView(url)
                     } label: {
@@ -57,7 +58,7 @@ struct ArticlesListView: View {
 
 }
 
-struct ArticleRow: View {
+fileprivate struct ArticleRow: View {
     
     let article: Article
 
@@ -81,4 +82,5 @@ struct ArticleRow: View {
     let viewModel = ArticlesViewModel(dependencies: ArticlesDependenciesDummyFactory().factory())
     
     return ArticlesListView(viewModel: viewModel)
+        .environment(DefaultNetworkMonitor())
 }
