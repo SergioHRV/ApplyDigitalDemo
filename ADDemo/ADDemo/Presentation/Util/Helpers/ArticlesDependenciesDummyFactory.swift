@@ -11,7 +11,7 @@ final class ArticlesDependenciesDummyFactory {
     
     func factory() -> ArticlesViewModel.Dependencies {
         let respository = DummyArticleRepository()
-        let getArticles = DefaultGetArticlesUseCase(repositry: respository, localRepositry: respository)
+        let getArticles = DefaultGetArticlesUseCase(repository: respository, localRepository: respository)
         let getLocalArticles = DefaultGetLocalArticlesUseCase(repositry: respository)
         let saveArticles = DefaultSaveLocalArticlesUseCase(repositry: respository)
         let deleteArticles = DefaultSaveDeletedArticleIdUseCase(repositry: respository)

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SaveLocalArticlesUseCase {
-    func saveArticles(_ articles: [Article])
+    func saveArticles(_ articles: [Article]) async throws
 }
 
 final class DefaultSaveLocalArticlesUseCase : SaveLocalArticlesUseCase {
@@ -19,7 +19,7 @@ final class DefaultSaveLocalArticlesUseCase : SaveLocalArticlesUseCase {
         self.repositry = repositry
     }
     
-    func saveArticles(_ articles: [Article]) {
-        repositry.saveArticles(articles)
+    func saveArticles(_ articles: [Article]) async throws {
+        try await repositry.saveArticles(articles)
     }
 }

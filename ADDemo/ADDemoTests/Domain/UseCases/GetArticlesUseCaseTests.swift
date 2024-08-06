@@ -13,16 +13,22 @@ final class GetArticlesUseCaseTests: XCTestCase {
     // MARK: Subject under test
     
     var sut: DefaultGetArticlesUseCase!
+    var repository: DomainRespositorySpy!
+    var localRepository: DomainLocalRespositorySpy!
     
     // MARK: Test lifecycle
     
     override func setUp() {
         super.setUp()
-        sut = DefaultGetArticlesUseCase(repositry: DomainRespositorySpy(),
-                                        localRepositry: DomainLocalRespositorySpy())
+        repository = DomainRespositorySpy()
+        localRepository = DomainLocalRespositorySpy()
+        sut = DefaultGetArticlesUseCase(repository: repository,
+                                        localRepository: localRepository)
     }
     
     override func tearDown() {
+        repository = nil
+        localRepository = nil
         sut = nil
         super.tearDown()
     }
@@ -30,14 +36,15 @@ final class GetArticlesUseCaseTests: XCTestCase {
     // MARK: Tests
     func testCallRepositoryToGetArticles() async throws {
         // Given
-        var articlesExpected: [Article]?
+        var expectedArticles: [Article]
         
         // When
-        articlesExpected = try await sut.getArticles()
+        expectedArticles = try await sut.getArticles()
         
         // Then
-        XCTAssertNotNil(articlesExpected)
-        XCTAssert(articlesExpected?.count == 1)
+        XCTAssert(expectedArticles.count == 1)
+        XCTAssertTrue(localRepository.getDeletedArticlesIdsGotCalled)
+        XCTAssertTrue(repository.getArticlesGotCalled)
     }
 
 }

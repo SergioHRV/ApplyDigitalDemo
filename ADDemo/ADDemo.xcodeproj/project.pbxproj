@@ -34,6 +34,12 @@
 		494B01202C6076D300CAAECB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B011F2C6076D300CAAECB /* Date+Extension.swift */; };
 		494B01222C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B01212C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift */; };
 		494B01252C608C1100CAAECB /* ArticleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B01242C608C1100CAAECB /* ArticleFilter.swift */; };
+		496F90472C628CA00088126A /* Article+BatchInsertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F90462C628CA00088126A /* Article+BatchInsertable.swift */; };
+		496F90492C62AA110088126A /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F90482C62AA110088126A /* PersistenceError.swift */; };
+		496F904E2C62D8B30088126A /* ArticleLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F904A2C62D8B30088126A /* ArticleLocalEntity+CoreDataClass.swift */; };
+		496F904F2C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F904B2C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */; };
+		496F90502C62D8B30088126A /* ArticleLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F904C2C62D8B30088126A /* ArticleLocalEntity+CoreDataProperties.swift */; };
+		496F90512C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F904D2C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataClass.swift */; };
 		498394102C61957F00BD8893 /* ArticleFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983940F2C61957F00BD8893 /* ArticleFilterTests.swift */; };
 		498394122C6197D200BD8893 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394112C6197D200BD8893 /* TestConstants.swift */; };
 		498394162C61A00900BD8893 /* DomainRespositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394152C61A00900BD8893 /* DomainRespositorySpy.swift */; };
@@ -45,10 +51,6 @@
 		498394252C61B2B900BD8893 /* ArticleRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394242C61B2B800BD8893 /* ArticleRepositoryTests.swift */; };
 		498394272C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394262C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift */; };
 		49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F972C5FD65A0056D300 /* PersistenceController.swift */; };
-		49BD3FA32C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */; };
-		49BD3FA42C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */; };
-		49BD3FA52C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA12C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift */; };
-		49BD3FA62C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA22C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */; };
 		49BD3FA82C5FE4E00056D300 /* LocalArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA72C5FE4E00056D300 /* LocalArticleRepository.swift */; };
 		49BD3FAA2C5FE5AB0056D300 /* DefaultLocalArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA92C5FE5AB0056D300 /* DefaultLocalArticleRepository.swift */; };
 		49BD3FAC2C5FEEBE0056D300 /* ArticleLocalEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FAB2C5FEEBE0056D300 /* ArticleLocalEntity+Mapping.swift */; };
@@ -105,6 +107,12 @@
 		494B011F2C6076D300CAAECB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		494B01212C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDeletedArticleIdUseCase.swift; sourceTree = "<group>"; };
 		494B01242C608C1100CAAECB /* ArticleFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFilter.swift; sourceTree = "<group>"; };
+		496F90462C628CA00088126A /* Article+BatchInsertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+BatchInsertable.swift"; sourceTree = "<group>"; };
+		496F90482C62AA110088126A /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
+		496F904A2C62D8B30088126A /* ArticleLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		496F904B2C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeleteArticleIDLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		496F904C2C62D8B30088126A /* ArticleLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		496F904D2C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeleteArticleIDLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4983940E2C61957E00BD8893 /* ADDemoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADDemoTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4983940F2C61957F00BD8893 /* ArticleFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFilterTests.swift; sourceTree = "<group>"; };
 		498394112C6197D200BD8893 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
@@ -117,10 +125,6 @@
 		498394242C61B2B800BD8893 /* ArticleRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepositoryTests.swift; sourceTree = "<group>"; };
 		498394262C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalArticleRepositoryTests.swift; sourceTree = "<group>"; };
 		49BD3F972C5FD65A0056D300 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		49BD3FA12C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteArticleIDLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		49BD3FA22C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteArticleIDLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		49BD3FA72C5FE4E00056D300 /* LocalArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalArticleRepository.swift; sourceTree = "<group>"; };
 		49BD3FA92C5FE5AB0056D300 /* DefaultLocalArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocalArticleRepository.swift; sourceTree = "<group>"; };
 		49BD3FAB2C5FEEBE0056D300 /* ArticleLocalEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+Mapping.swift"; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 		491A0FEA2C5EF17A00663570 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				496F90452C628C660088126A /* Util */,
 				491A101E2C5F4FF300663570 /* PersistentStorage */,
 				491A100A2C5F0C0800663570 /* DataMapping */,
 				491A10052C5F09AF00663570 /* Repositories */,
@@ -370,12 +375,13 @@
 		491A101E2C5F4FF300663570 /* PersistentStorage */ = {
 			isa = PBXGroup;
 			children = (
+				496F904A2C62D8B30088126A /* ArticleLocalEntity+CoreDataClass.swift */,
+				496F904C2C62D8B30088126A /* ArticleLocalEntity+CoreDataProperties.swift */,
+				496F904D2C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataClass.swift */,
+				496F904B2C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */,
 				491A101F2C5F50BD00663570 /* ADDemo.xcdatamodeld */,
 				49BD3F972C5FD65A0056D300 /* PersistenceController.swift */,
-				49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */,
-				49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */,
-				49BD3FA12C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift */,
-				49BD3FA22C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift */,
+				496F90482C62AA110088126A /* PersistenceError.swift */,
 			);
 			path = PersistentStorage;
 			sourceTree = "<group>";
@@ -384,6 +390,14 @@
 			isa = PBXGroup;
 			children = (
 				494B01242C608C1100CAAECB /* ArticleFilter.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		496F90452C628C660088126A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				496F90462C628CA00088126A /* Article+BatchInsertable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -603,14 +617,12 @@
 				491A10072C5F09CD00663570 /* DefaultArticleRepository.swift in Sources */,
 				491A10192C5F483B00663570 /* NetworkMonitor.swift in Sources */,
 				491A0FFD2C5EFF6600663570 /* APIEndpoint.swift in Sources */,
-				49BD3FA32C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift in Sources */,
-				49BD3FA42C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift in Sources */,
 				494B01252C608C1100CAAECB /* ArticleFilter.swift in Sources */,
-				49BD3FA52C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataClass.swift in Sources */,
-				49BD3FA62C5FDEFB0056D300 /* DeleteArticleIDLocalEntity+CoreDataProperties.swift in Sources */,
 				491A100C2C5F0C5C00663570 /* ArticleResponse+Mapping.swift in Sources */,
 				49BD3FB02C5FFEBF0056D300 /* SaveLocalArticlesUseCase.swift in Sources */,
 				491A10212C5F50BD00663570 /* ADDemo.xcdatamodeld in Sources */,
+				496F90502C62D8B30088126A /* ArticleLocalEntity+CoreDataProperties.swift in Sources */,
+				496F904F2C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataProperties.swift in Sources */,
 				491A100F2C5F1D3400663570 /* Article+Extesion.swift in Sources */,
 				491A10152C5F3BFD00663570 /* ArticlesViewModel.swift in Sources */,
 				491A0FBE2C5EEF6F00663570 /* ADDemoApp.swift in Sources */,
@@ -621,18 +633,22 @@
 				49BD3FAE2C5FF0370056D300 /* GetLocalArticlesUseCase.swift in Sources */,
 				491A101D2C5F4A8700663570 /* ArticlesDependenciesDummyFactory.swift in Sources */,
 				49BD3FA82C5FE4E00056D300 /* LocalArticleRepository.swift in Sources */,
+				496F904E2C62D8B30088126A /* ArticleLocalEntity+CoreDataClass.swift in Sources */,
 				494B01222C6082FF00CAAECB /* SaveDeletedArticleIdUseCase.swift in Sources */,
 				491A10092C5F09F700663570 /* BaseRepository.swift in Sources */,
+				496F90492C62AA110088126A /* PersistenceError.swift in Sources */,
 				491A10132C5F3BEA00663570 /* ArticlesListView.swift in Sources */,
 				49BD3FB32C60383C0056D300 /* WebView.swift in Sources */,
 				491A0FF82C5EFA4400663570 /* GetArticlesUseCase.swift in Sources */,
 				491A101B2C5F4A5B00663570 /* ArticlesDependenciesFactory.swift in Sources */,
 				49BD3FAA2C5FE5AB0056D300 /* DefaultLocalArticleRepository.swift in Sources */,
+				496F90472C628CA00088126A /* Article+BatchInsertable.swift in Sources */,
 				491A10012C5F01EE00663570 /* HTTPStatusCode.swift in Sources */,
 				491A0FFF2C5EFFF200663570 /* Client.swift in Sources */,
 				491A0FF22C5EF75300663570 /* Article.swift in Sources */,
 				491A10042C5F075400663570 /* ArticleResponse.swift in Sources */,
 				49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */,
+				496F90512C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

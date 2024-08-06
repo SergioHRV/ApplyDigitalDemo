@@ -8,7 +8,7 @@
 import Foundation
 
 protocol GetLocalArticlesUseCase {
-    func getLocalArticles() -> [Article]
+    func getLocalArticles() async throws -> [Article]
 }
 
 final class DefaultGetLocalArticlesUseCase : GetLocalArticlesUseCase {
@@ -19,9 +19,10 @@ final class DefaultGetLocalArticlesUseCase : GetLocalArticlesUseCase {
         self.repositry = repositry
     }
     
-    func getLocalArticles() -> [Article] {
-        let deletedIds = repositry.getDeletedArticlesIds()
-        let articles = repositry.getArticles()
+    func getLocalArticles() async throws -> [Article] {
+        async let deletedIdsRequest = try repositry.getDeletedArticlesIds()
+        async let articlesRequest = try repositry.getArticles()
+        let (articles, deletedIds) = try await (articlesRequest, deletedIdsRequest)
         return ArticleFilter.filter(articles: articles, contains: deletedIds)
     }
 }

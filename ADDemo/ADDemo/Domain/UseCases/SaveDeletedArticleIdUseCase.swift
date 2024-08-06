@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SaveDeletedArticleIdUseCase {
-    func addDeletedArticleId(_ articleId: String)
+    func addDeletedArticleId(_ articleId: String) async throws
 }
 
 final class DefaultSaveDeletedArticleIdUseCase : SaveDeletedArticleIdUseCase {
@@ -19,7 +19,7 @@ final class DefaultSaveDeletedArticleIdUseCase : SaveDeletedArticleIdUseCase {
         self.repositry = repositry
     }
     
-    func addDeletedArticleId(_ articleId: String) {
-        repositry.addDeletedArticleId(articleId)
+    func addDeletedArticleId(_ articleId: String) async throws {
+        try await repositry.addDeletedArticleId(articleId)
     }
 }

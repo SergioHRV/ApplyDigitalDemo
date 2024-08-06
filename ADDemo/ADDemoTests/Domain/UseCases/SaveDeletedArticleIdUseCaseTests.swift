@@ -30,21 +30,14 @@ final class SaveDeletedArticleIdUseCaseTests: XCTestCase {
     }
 
     // MARK: Tests
-    func testCallTheRepositotyToAddAnArticleIdToDelete() {
+    func testCallTheRepositotyToAddAnArticleIdToDelete() async throws {
         // Given
         let articleIdToAdd = TestConstants.deletedIds.first!
-        let expectation = self.expectation(description: "SaveDeletedArticleIdUseCase")
-        var articleIdAdded: String?
-        repository.addDeletedArticleIdCallBack = { articleId in
-            articleIdAdded = articleId
-            expectation.fulfill()
-        }
         
         // When
-        sut.addDeletedArticleId(articleIdToAdd)
+        try await sut.addDeletedArticleId(articleIdToAdd)
         
         // Then
-        wait(for: [expectation], timeout: 1.0)
-        XCTAssertNotNil(articleIdAdded)
+        XCTAssertTrue(repository.addDeletedArticleIdGotCalled)
     }
 }

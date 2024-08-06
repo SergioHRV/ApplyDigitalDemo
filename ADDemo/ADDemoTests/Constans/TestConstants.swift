@@ -11,17 +11,17 @@ import Foundation
 struct TestConstants {
     
     static let articles: [Article] = [
-        Article(id: "ADDEMO01",
+        Article(id: "ADDEMO04",
                 title: "ADDEMO as a testing prject",
                 author: "SRamirez",
                 createdAt: Date(),
                 articleUrl: ""),
-        Article(id: "ADDEMO02",
+        Article(id: "ADDEMO05",
                 title: "ADDEMO as a testing prject",
                 author: "SRamirez",
                 createdAt: Date(),
                 articleUrl: ""),
-        Article(id: "ADDEMO03",
+        Article(id: "ADDEMO06",
                 title: "ADDEMO as a testing prject",
                 author: "SRamirez",
                 createdAt: Date(),
@@ -30,8 +30,8 @@ struct TestConstants {
     ]
     
     static let deletedIds: [String] = [
-        "ADDEMO02",
-        "ADDEMO03"
+        "ADDEMO04",
+        "ADDEMO05"
     ]
     
     static let articlesResponse: ArticlesResponse = ArticlesResponse(hits: [

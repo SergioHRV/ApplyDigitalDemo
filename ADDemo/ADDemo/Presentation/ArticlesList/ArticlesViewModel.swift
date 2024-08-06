@@ -23,31 +23,34 @@ final class ArticlesViewModel: ObservableObject {
         self.dependencies = dependencies
     }
     
-    func getArticles() {
-        Task {
-            do {
-                if dependencies.networkMonitor.isConnected {
-                    let articlesResponse = try await dependencies.getArticlesUseCase.getArticles()
-                    dependencies.saveArticlesUseCase.saveArticles(articlesResponse)
-                    await updateArticles(withArticles: articlesResponse)
-                }else {
-                    let localArticles = dependencies.getLocalArticlesUseCase.getLocalArticles()
-                    await updateArticles(withArticles: localArticles)
-                }
-            } catch {
-                let nsError = error as NSError
-                print("Unresolved error \(nsError), \(nsError.userInfo)")
+    func getArticles() async {
+        let requestedArticles: [Article]
+        do {
+            if dependencies.networkMonitor.isConnected {
+                requestedArticles = try await dependencies.getArticlesUseCase.getArticles()
+                try await dependencies.saveArticlesUseCase.saveArticles(requestedArticles)
+            }else {
+                requestedArticles = try await dependencies.getLocalArticlesUseCase.getLocalArticles()
             }
+            await updateArticles(withArticles: requestedArticles)
+        } catch {
+            let nsError = error as NSError
+            print("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
     
-    func deleteArticle(at offsets: IndexSet) {
+    func deleteArticle(at offsets: IndexSet) async {
         let idsToDelete = offsets.map { articles[$0].id }
         guard let idToDelete = idsToDelete.first else {
             return
         }
-        dependencies.saveDeletedArticleIdUseCase.addDeletedArticleId(idToDelete)
-        articles.remove(atOffsets: offsets)
+        do {
+            try await dependencies.saveDeletedArticleIdUseCase.addDeletedArticleId(idToDelete)
+            articles.remove(atOffsets: offsets)
+        } catch {
+            let nsError = error as NSError
+            print("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
     
     @MainActor private func updateArticles(withArticles newArticles: [Article]) {

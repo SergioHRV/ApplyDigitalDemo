@@ -8,8 +8,8 @@
 import Foundation
 
 protocol LocalArticleRepository {
-    func getArticles() -> [Article]
-    func saveArticles(_ articles: [Article])
-    func addDeletedArticleId(_ articleId: String)
-    func getDeletedArticlesIds() -> [String]
+    func getArticles() async throws -> [Article]
+    func saveArticles(_ articles: [Article]) async throws
+    func addDeletedArticleId(_ articleId: String) async throws
+    func getDeletedArticlesIds() async throws -> [String]
 }

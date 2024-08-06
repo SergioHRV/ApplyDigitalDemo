@@ -9,24 +9,26 @@ import Foundation
 @testable import ADDemo
 
 final class DomainLocalRespositorySpy: LocalArticleRepository {
-    var addDeletedArticleIdCallBack: (String) -> Void = { _ in }
-    var saveArticlesCallBack: ([Article]) -> Void = { _ in }
-    var getArticlesCallBack: ([Article]) -> Void = { _ in }
+    var getArticlesGotCalled: Bool = false
+    var saveArticlesGotCalled: Bool = false
+    var addDeletedArticleIdGotCalled: Bool = false
+    var getDeletedArticlesIdsGotCalled: Bool = false
     
-    func getArticles() -> [ADDemo.Article] {
-        getArticlesCallBack(TestConstants.articles)
+    func getArticles() async throws -> [ADDemo.Article] {
+        getArticlesGotCalled = true
         return TestConstants.articles
     }
     
-    func saveArticles(_ articles: [ADDemo.Article]) {
-        saveArticlesCallBack(articles)
+    func saveArticles(_ articles: [ADDemo.Article]) async throws {
+        saveArticlesGotCalled = true
     }
     
-    func addDeletedArticleId(_ articleId: String) {
-        addDeletedArticleIdCallBack(articleId)
+    func addDeletedArticleId(_ articleId: String) async throws {
+        addDeletedArticleIdGotCalled = true
     }
     
-    func getDeletedArticlesIds() -> [String] {
+    func getDeletedArticlesIds() async throws -> [String] {
+        getDeletedArticlesIdsGotCalled = true
         return TestConstants.deletedIds
     }
     
@@ -34,7 +36,10 @@ final class DomainLocalRespositorySpy: LocalArticleRepository {
 }
 
 final class DomainRespositorySpy: ArticleRepository {
+    var getArticlesGotCalled: Bool = false
+    
     func getArticles() async throws -> [ADDemo.Article] {
+        getArticlesGotCalled = true
         return TestConstants.articles
     }
 }

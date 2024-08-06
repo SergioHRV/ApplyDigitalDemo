@@ -48,11 +48,15 @@ struct ArticlesListView: View {
     }
     
     private func getArticles() {
-        viewModel.getArticles()
+        Task{
+            await viewModel.getArticles()
+        }
     }
     
     private func delete(at offsets: IndexSet) {
-        viewModel.deleteArticle(at: offsets)
+        Task {
+            await viewModel.deleteArticle(at: offsets)
+        }
         
     }
 

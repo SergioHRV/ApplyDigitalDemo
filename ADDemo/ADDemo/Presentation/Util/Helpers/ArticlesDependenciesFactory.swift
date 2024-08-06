@@ -12,7 +12,7 @@ final class ArticlesDependenciesFactory {
     func factory() -> ArticlesViewModel.Dependencies {
         let respository = DefaultArticleRepository()
         let localRepository = DefaultLocalArticleRepository()
-        let getArticles = DefaultGetArticlesUseCase(repositry: respository, localRepositry: localRepository)
+        let getArticles = DefaultGetArticlesUseCase(repository: respository, localRepository: localRepository)
         let getLocalArticles = DefaultGetLocalArticlesUseCase(repositry: localRepository)
         let saveArticles = DefaultSaveLocalArticlesUseCase(repositry: localRepository)
         let deleteArticles = DefaultSaveDeletedArticleIdUseCase(repositry: localRepository)

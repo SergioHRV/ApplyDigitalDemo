@@ -13,15 +13,18 @@ final class ArticleRepositoryTests: XCTestCase {
     // MARK: Subject under test
     
     var sut: DefaultArticleRepository!
+    var client: DataClientSpy!
     
     // MARK: Test lifecycle
     
     override func setUp() {
         super.setUp()
-        sut = DefaultArticleRepository(client: DataClientSpy())
+        client = DataClientSpy()
+        sut = DefaultArticleRepository(client: client)
     }
     
     override func tearDown() {
+        client = nil
         sut = nil
         super.tearDown()
     }
@@ -29,14 +32,14 @@ final class ArticleRepositoryTests: XCTestCase {
     // MARK: Tests
     func testCallClientToGetArticles() async throws {
         // Given
-        var articlesExpected: [Article]?
+        var expectedArticles: [Article]
         
         // When
-        articlesExpected = try await sut.getArticles()
+        expectedArticles = try await sut.getArticles()
         
         // Then
-        XCTAssertNotNil(articlesExpected)
-        XCTAssert(articlesExpected?.count == 3)
+        XCTAssert(expectedArticles.count == 3)
+        XCTAssertTrue(client.clientGotCalled)
     }
 
 }

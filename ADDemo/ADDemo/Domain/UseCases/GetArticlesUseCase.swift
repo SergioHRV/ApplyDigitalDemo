@@ -13,21 +13,18 @@ protocol GetArticlesUseCase {
 
 final class DefaultGetArticlesUseCase : GetArticlesUseCase {
         
-    private let repositry: ArticleRepository
-    private let localRepositry: LocalArticleRepository
+    private let repository: ArticleRepository
+    private let localRepository: LocalArticleRepository
     
-    public init(repositry: ArticleRepository, localRepositry: LocalArticleRepository){
-        self.repositry = repositry
-        self.localRepositry = localRepositry
+    public init(repository: ArticleRepository, localRepository: LocalArticleRepository){
+        self.repository = repository
+        self.localRepository = localRepository
     }
     
     func getArticles() async throws -> [Article] {
-        let deletedIds = localRepositry.getDeletedArticlesIds()
-        do {
-            let articles = try await repositry.getArticles()
-            return ArticleFilter.filter(articles: articles, contains: deletedIds)
-        } catch {
-            throw error
-        }
+        async let deletedIdsRequest = try localRepository.getDeletedArticlesIds()
+        async let articlesRequest = try repository.getArticles()
+        let (articles, deletedIds) = try await (articlesRequest, deletedIdsRequest)
+        return ArticleFilter.filter(articles: articles, contains: deletedIds)
     }
 }

@@ -30,23 +30,17 @@ final class GetLocalArticlesUseCaseTests: XCTestCase {
     }
 
     // MARK: Tests
-    func testCallRepositoryToGetLocalArticles() {
+    func testCallRepositoryToGetLocalArticles() async throws {
         // Given
-        let expectation = self.expectation(description: "GetLocalArticlesUseCase")
-        var articlesExpected: [Article]?
-        repository.getArticlesCallBack = { articles in
-            articlesExpected = articles
-            expectation.fulfill()
-        }
-        
+        var expectedArticles: [Article]
+    
         // When
-        let finalArticles = sut.getLocalArticles()
+        expectedArticles = try await sut.getLocalArticles()
         
         // Then
-        wait(for: [expectation], timeout: 1.0)
-        XCTAssertNotNil(articlesExpected)
-        XCTAssert(articlesExpected?.count == 3)
-        XCTAssert(finalArticles.count == 1)
+        XCTAssert(expectedArticles.count == 1)
+        XCTAssertTrue(repository.getDeletedArticlesIdsGotCalled)
+        XCTAssertTrue(repository.getArticlesGotCalled)
     }
 
 }

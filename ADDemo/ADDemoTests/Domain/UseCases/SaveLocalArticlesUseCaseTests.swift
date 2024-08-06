@@ -30,22 +30,15 @@ final class SaveLocalArticlesUseCaseTests: XCTestCase {
     }
 
     // MARK: Tests
-    func testCallRepositoryToSaveArticles() {
+    func testCallRepositoryToSaveArticles() async throws {
         // Given
         let articlesToSave = TestConstants.articles
-        let expectation = self.expectation(description: "SaveLocalArticlesUseCase")
-        var articlesSaved: [Article]?
-        repository.saveArticlesCallBack = { articles in
-            articlesSaved = articles
-            expectation.fulfill()
-        }
         
         // When
-        sut.saveArticles(articlesToSave)
+        try await sut.saveArticles(articlesToSave)
         
         // Then
-        wait(for: [expectation], timeout: 1.0)
-        XCTAssertNotNil(articlesSaved)
+        XCTAssertTrue(repository.saveArticlesGotCalled)
     }
 
 }

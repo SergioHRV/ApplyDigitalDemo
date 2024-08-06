@@ -30,30 +30,55 @@ final class LocalArticleRepositoryTests: XCTestCase {
     }
 
     // MARK: Tests
-    func testGetArticles() {
+    func testGetArticles() async throws {
         // Given
-        var articlesExpected: [Article]?
-        sut.saveArticles(TestConstants.articles)
+        try await persistence.deleteAllArticles()
+        try await persistence.saveBatchArticles(from: TestConstants.articles)
+        var expectedArticles: [Article]
         
         // When
-        articlesExpected = sut.getArticles()
+        expectedArticles = try await sut.getArticles()
         
         // Then
-        XCTAssertNotNil(articlesExpected)
-        XCTAssert(articlesExpected?.count == 3)
+        XCTAssert(expectedArticles.count == 3)
     }
 
-    func testGetDeletedId() {
+    func testGetDeletedId() async throws {
         // Given
-        var expedtedIds: [String]?
-        sut.addDeletedArticleId("TestIdToSave")
+        try await persistence.deleteAllIds()
+        try await persistence.saveArticleId(articleId: TestConstants.deletedIds.first!)
+        var expedtedIds: [String]
         
         // When
-        expedtedIds = sut.getDeletedArticlesIds()
+        expedtedIds = try await sut.getDeletedArticlesIds()
         
         // Then
-        XCTAssertNotNil(expedtedIds)
-        XCTAssert(expedtedIds?.count == 1)
+        XCTAssert(expedtedIds.count == 1)
     }
     
+    func testSaveArticles() async throws {
+        // Given
+        try await persistence.deleteAllArticles()
+        let articlesToSave = TestConstants.articles
+        
+        // When
+        try await sut.saveArticles(articlesToSave)
+        
+        // Then
+        let expedtedArticles = try await sut.getArticles()
+        XCTAssert(expedtedArticles.count == 3)
+    }
+    
+    func testAddDeletedArticleId() async throws {
+        // Given
+        try await persistence.deleteAllIds()
+        let idToSave = TestConstants.deletedIds.first!
+        
+        // When
+        try await sut.addDeletedArticleId(idToSave)
+        
+        // Then
+        let expedtedIds = try await sut.getDeletedArticlesIds()
+        XCTAssert(expedtedIds.count == 1)
+    }
 }

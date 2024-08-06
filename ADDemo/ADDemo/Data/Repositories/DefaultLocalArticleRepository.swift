@@ -15,8 +15,8 @@ final class DefaultLocalArticleRepository: LocalArticleRepository {
         persistence = persistenceController
     }
     
-    func getArticles() -> [Article] {
-        let localArticles = ArticleLocalEntity.sortedFetchRequest(using: persistence.container.viewContext)
+    func getArticles() async throws -> [Article] {
+        let localArticles = try await persistence.getAllArticles()
         var articles: [Article] = []
         for localArticle in localArticles {
             articles.append(localArticle.toDomain())
@@ -24,22 +24,17 @@ final class DefaultLocalArticleRepository: LocalArticleRepository {
         return articles
     }
     
-    func saveArticles(_ articles: [Article]) {
-        do {
-            try ArticleLocalEntity.deleteAll(using: persistence.container.viewContext)
-            ArticleLocalEntity.saveArticles(articles: articles, using: persistence.container.viewContext)
-        } catch {
-            let nsError = error as NSError
-            print("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+    func saveArticles(_ articles: [Article]) async throws {
+        try await persistence.deleteAllArticles()
+        try await persistence.saveBatchArticles(from: articles)
     }
     
-    func addDeletedArticleId(_ articleId: String) {
-        DeleteArticleIDLocalEntity.saveArticleId(articleId: articleId, using: persistence.container.viewContext)
+    func addDeletedArticleId(_ articleId: String) async throws {
+        try await persistence.saveArticleId(articleId: articleId)
     }
     
-    func getDeletedArticlesIds() -> [String] {
-        let deleteArticlesIDsLocalEntitys = DeleteArticleIDLocalEntity.basicFetchRequest(using: persistence.container.viewContext)
+    func getDeletedArticlesIds() async throws -> [String] {
+        let deleteArticlesIDsLocalEntitys = try await persistence.getDeletedArticleIds()
         let deletedIds = deleteArticlesIDsLocalEntitys.map { $0.id ?? "" }
         return deletedIds
     }
