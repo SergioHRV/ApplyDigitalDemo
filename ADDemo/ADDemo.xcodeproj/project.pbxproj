@@ -43,6 +43,7 @@
 		4983941E2C61AADB00BD8893 /* GetArticlesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983941D2C61AADB00BD8893 /* GetArticlesUseCaseTests.swift */; };
 		498394222C61AFF600BD8893 /* DataClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394212C61AFF600BD8893 /* DataClientSpy.swift */; };
 		498394252C61B2B900BD8893 /* ArticleRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394242C61B2B800BD8893 /* ArticleRepositoryTests.swift */; };
+		498394272C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394262C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift */; };
 		49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F972C5FD65A0056D300 /* PersistenceController.swift */; };
 		49BD3FA32C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */; };
 		49BD3FA42C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */; };
@@ -114,6 +115,7 @@
 		4983941D2C61AADB00BD8893 /* GetArticlesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArticlesUseCaseTests.swift; sourceTree = "<group>"; };
 		498394212C61AFF600BD8893 /* DataClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClientSpy.swift; sourceTree = "<group>"; };
 		498394242C61B2B800BD8893 /* ArticleRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepositoryTests.swift; sourceTree = "<group>"; };
+		498394262C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalArticleRepositoryTests.swift; sourceTree = "<group>"; };
 		49BD3F972C5FD65A0056D300 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		49BD3F9F2C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		49BD3FA02C5FDEFB0056D300 /* ArticleLocalEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleLocalEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				498394242C61B2B800BD8893 /* ArticleRepositoryTests.swift */,
+				498394262C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				4983941A2C61A3B700BD8893 /* SaveLocalArticlesUseCaseTests.swift in Sources */,
 				4983941C2C61A5D900BD8893 /* GetLocalArticlesUseCaseTests.swift in Sources */,
 				498394182C61A02800BD8893 /* SaveDeletedArticleIdUseCaseTests.swift in Sources */,
+				498394272C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift in Sources */,
 				498394222C61AFF600BD8893 /* DataClientSpy.swift in Sources */,
 				498394102C61957F00BD8893 /* ArticleFilterTests.swift in Sources */,
 				4983941E2C61AADB00BD8893 /* GetArticlesUseCaseTests.swift in Sources */,
