@@ -28,7 +28,6 @@ final class ArticlesViewModel: ObservableObject {
         if dependencies.networkMonitor.isConnected {
             requestedArticles = try await dependencies.getArticlesUseCase.getArticles()
             try await dependencies.saveArticlesUseCase.saveArticles(requestedArticles)
-            throw CodableError.DecodingFailed
         }else {
             requestedArticles = try await dependencies.getLocalArticlesUseCase.getLocalArticles()
         }
@@ -41,10 +40,14 @@ final class ArticlesViewModel: ObservableObject {
             return
         }
         try await dependencies.saveDeletedArticleIdUseCase.addDeletedArticleId(idToDelete)
-        articles.remove(atOffsets: offsets)
+        await updateArticlesRemovingArticle(at: offsets)
     }
     
     @MainActor private func updateArticles(withArticles newArticles: [Article]) {
         articles = newArticles
+    }
+    
+    @MainActor private func updateArticlesRemovingArticle(at offsets: IndexSet) {
+        articles.remove(atOffsets: offsets)
     }
 }
