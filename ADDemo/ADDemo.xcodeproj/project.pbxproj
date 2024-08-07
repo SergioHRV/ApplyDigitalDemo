@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490171A32C6405AE009BD738 /* ADDemo.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 491A101F2C5F50BD00663570 /* ADDemo.xcdatamodeld */; };
 		491A0FBE2C5EEF6F00663570 /* ADDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A0FBD2C5EEF6F00663570 /* ADDemoApp.swift */; };
 		491A0FC22C5EEF7100663570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491A0FC12C5EEF7100663570 /* Assets.xcassets */; };
 		491A0FC52C5EEF7100663570 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491A0FC42C5EEF7100663570 /* Preview Assets.xcassets */; };
@@ -648,6 +649,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490171A32C6405AE009BD738 /* ADDemo.xcdatamodeld in Resources */,
 				491A0FEF2C5EF36300663570 /* LaunchScreen.storyboard in Resources */,
 				491A0FC52C5EEF7100663570 /* Preview Assets.xcassets in Resources */,
 				49B9C7192C63C53800B8AE0B /* Localizable.xcstrings in Resources */,
