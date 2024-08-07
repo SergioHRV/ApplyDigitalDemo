@@ -5,8 +5,9 @@
 
 ### Features
 
-> Display a list of post of Hacker News
-> Tap on a post with an url shows an internal web view that load the link
+> Display a list of post of Hacker News.
+
+> Tap on a post with an url shows an internal web view that load the link.
 
 - **Architecture - MVVM + Clean:**
 The MVVM architectural pattern facilitates the separation of the user interface code from the business logic code such that the view is not dependent upon any specific model platform, for the comunication MVVM make use of the observer pattern.
@@ -37,8 +38,9 @@ for more information [Test Doubles](https://martinfowler.com/bliki/TestDouble.ht
 ### Installation
 
 ------------
-This app does not use any third-party libraries, so the installation process is just cloning the ApplyDigitalDemo github repository.
+This is the installation process for ApplyDigitalDemo github repository.
 
 ```
 git clone https://github.com/SergioHRV/ApplyDigitalDemo.git
 ```
+> If building fails for the ADDemo.xcdatamodeld file, in xcode just delete the reference in ADDemo/Data/PersistentStorage and add the file reference again, it should be in the same folder
