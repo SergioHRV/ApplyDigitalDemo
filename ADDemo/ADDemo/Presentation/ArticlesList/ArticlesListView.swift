@@ -11,6 +11,7 @@ struct ArticlesListView: View {
     @Environment(DefaultNetworkMonitor.self) private var newtworkMonitor
     @ObservedObject private var viewModel: ArticlesViewModel
     @State private var isFirsTime = true
+    @State private var showingAlert = false
     
     var body: some View {
         
@@ -41,6 +42,16 @@ struct ArticlesListView: View {
                 getArticles()
             }
         })
+        .alert(TextADD.General.alertTitle,
+               isPresented: $showingAlert,
+               actions: {
+            Button(TextADD.General.alertOk, role: .cancel) {
+                showingAlert = false
+            }
+        },
+               message: {
+            Text(TextADD.General.alertMessage)
+        })
     }
     
     init(viewModel: ArticlesViewModel) {
@@ -49,17 +60,23 @@ struct ArticlesListView: View {
     
     private func getArticles() {
         Task{
-            await viewModel.getArticles()
+            do {
+                try await viewModel.getArticles()
+            } catch {
+                showingAlert = true
+            }
         }
     }
     
     private func delete(at offsets: IndexSet) {
         Task {
-            await viewModel.deleteArticle(at: offsets)
+            do {
+                try await viewModel.deleteArticle(at: offsets)
+            } catch {
+                showingAlert = true
+            }
         }
-        
     }
-
 }
 
 fileprivate struct ArticleRow: View {

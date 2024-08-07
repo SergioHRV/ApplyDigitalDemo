@@ -54,6 +54,9 @@
 		498394222C61AFF600BD8893 /* DataClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394212C61AFF600BD8893 /* DataClientSpy.swift */; };
 		498394252C61B2B900BD8893 /* ArticleRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394242C61B2B800BD8893 /* ArticleRepositoryTests.swift */; };
 		498394272C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498394262C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift */; };
+		49B9C7172C63C0AA00B8AE0B /* BaseLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9C7162C63C0AA00B8AE0B /* BaseLocalRepository.swift */; };
+		49B9C7192C63C53800B8AE0B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 49B9C7182C63C53800B8AE0B /* Localizable.xcstrings */; };
+		49B9C71B2C63C72D00B8AE0B /* TextADD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9C71A2C63C72D00B8AE0B /* TextADD.swift */; };
 		49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3F972C5FD65A0056D300 /* PersistenceController.swift */; };
 		49BD3FA82C5FE4E00056D300 /* LocalArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA72C5FE4E00056D300 /* LocalArticleRepository.swift */; };
 		49BD3FAA2C5FE5AB0056D300 /* DefaultLocalArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD3FA92C5FE5AB0056D300 /* DefaultLocalArticleRepository.swift */; };
@@ -132,6 +135,9 @@
 		498394212C61AFF600BD8893 /* DataClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClientSpy.swift; sourceTree = "<group>"; };
 		498394242C61B2B800BD8893 /* ArticleRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepositoryTests.swift; sourceTree = "<group>"; };
 		498394262C61B4EF00BD8893 /* LocalArticleRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalArticleRepositoryTests.swift; sourceTree = "<group>"; };
+		49B9C7162C63C0AA00B8AE0B /* BaseLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLocalRepository.swift; sourceTree = "<group>"; };
+		49B9C7182C63C53800B8AE0B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		49B9C71A2C63C72D00B8AE0B /* TextADD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextADD.swift; sourceTree = "<group>"; };
 		49BD3F972C5FD65A0056D300 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		49BD3FA72C5FE4E00056D300 /* LocalArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalArticleRepository.swift; sourceTree = "<group>"; };
 		49BD3FA92C5FE5AB0056D300 /* DefaultLocalArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocalArticleRepository.swift; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 			children = (
 				491A0FC12C5EEF7100663570 /* Assets.xcassets */,
 				491A0FEE2C5EF36300663570 /* LaunchScreen.storyboard */,
+				49B9C7182C63C53800B8AE0B /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -331,6 +338,7 @@
 				491A10062C5F09CD00663570 /* DefaultArticleRepository.swift */,
 				491A10082C5F09F700663570 /* BaseRepository.swift */,
 				49BD3FA92C5FE5AB0056D300 /* DefaultLocalArticleRepository.swift */,
+				49B9C7162C63C0AA00B8AE0B /* BaseLocalRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -377,6 +385,7 @@
 				491A10182C5F483B00663570 /* NetworkMonitor.swift */,
 				491A101A2C5F4A5B00663570 /* ArticlesDependenciesFactory.swift */,
 				491A101C2C5F4A8700663570 /* ArticlesDependenciesDummyFactory.swift */,
+				49B9C71A2C63C72D00B8AE0B /* TextADD.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -641,6 +650,7 @@
 			files = (
 				491A0FEF2C5EF36300663570 /* LaunchScreen.storyboard in Resources */,
 				491A0FC52C5EEF7100663570 /* Preview Assets.xcassets in Resources */,
+				49B9C7192C63C53800B8AE0B /* Localizable.xcstrings in Resources */,
 				491A0FC22C5EEF7100663570 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,6 +678,7 @@
 			files = (
 				491A10072C5F09CD00663570 /* DefaultArticleRepository.swift in Sources */,
 				491A10192C5F483B00663570 /* NetworkMonitor.swift in Sources */,
+				49B9C7172C63C0AA00B8AE0B /* BaseLocalRepository.swift in Sources */,
 				491A0FFD2C5EFF6600663570 /* APIEndpoint.swift in Sources */,
 				494B01252C608C1100CAAECB /* ArticleFilter.swift in Sources */,
 				491A100C2C5F0C5C00663570 /* ArticleResponse+Mapping.swift in Sources */,
@@ -700,6 +711,7 @@
 				491A0FF22C5EF75300663570 /* Article.swift in Sources */,
 				491A10042C5F075400663570 /* ArticleResponse.swift in Sources */,
 				49BD3F982C5FD65A0056D300 /* PersistenceController.swift in Sources */,
+				49B9C71B2C63C72D00B8AE0B /* TextADD.swift in Sources */,
 				496F90512C62D8B30088126A /* DeleteArticleIDLocalEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

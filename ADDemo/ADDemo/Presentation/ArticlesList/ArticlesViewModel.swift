@@ -23,34 +23,25 @@ final class ArticlesViewModel: ObservableObject {
         self.dependencies = dependencies
     }
     
-    func getArticles() async {
+    func getArticles() async throws {
         let requestedArticles: [Article]
-        do {
-            if dependencies.networkMonitor.isConnected {
-                requestedArticles = try await dependencies.getArticlesUseCase.getArticles()
-                try await dependencies.saveArticlesUseCase.saveArticles(requestedArticles)
-            }else {
-                requestedArticles = try await dependencies.getLocalArticlesUseCase.getLocalArticles()
-            }
-            await updateArticles(withArticles: requestedArticles)
-        } catch {
-            let nsError = error as NSError
-            print("Unresolved error \(nsError), \(nsError.userInfo)")
+        if dependencies.networkMonitor.isConnected {
+            requestedArticles = try await dependencies.getArticlesUseCase.getArticles()
+            try await dependencies.saveArticlesUseCase.saveArticles(requestedArticles)
+            throw CodableError.DecodingFailed
+        }else {
+            requestedArticles = try await dependencies.getLocalArticlesUseCase.getLocalArticles()
         }
+        await updateArticles(withArticles: requestedArticles)
     }
     
-    func deleteArticle(at offsets: IndexSet) async {
+    func deleteArticle(at offsets: IndexSet) async throws {
         let idsToDelete = offsets.map { articles[$0].id }
         guard let idToDelete = idsToDelete.first else {
             return
         }
-        do {
-            try await dependencies.saveDeletedArticleIdUseCase.addDeletedArticleId(idToDelete)
-            articles.remove(atOffsets: offsets)
-        } catch {
-            let nsError = error as NSError
-            print("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+        try await dependencies.saveDeletedArticleIdUseCase.addDeletedArticleId(idToDelete)
+        articles.remove(atOffsets: offsets)
     }
     
     @MainActor private func updateArticles(withArticles newArticles: [Article]) {
