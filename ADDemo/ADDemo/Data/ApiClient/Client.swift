@@ -39,8 +39,6 @@ final class Client: APIClient {
             let objectResponse = try JSONDecoder().decode(T.self, from: data)
             return objectResponse
         } catch {
-            let nsError = error as NSError
-            print("Unresolved error \(nsError), \(nsError.userInfo)")
             throw CodableError.DecodingFailed
         }
     }

@@ -7,13 +7,7 @@
 
 import Foundation
 
-final class DefaultLocalArticleRepository: LocalArticleRepository {
-    
-    let persistence: PersistenceController
-
-    init(persistenceController: PersistenceController = PersistenceController.shared) {
-        persistence = persistenceController
-    }
+final class DefaultLocalArticleRepository: BaseLocalRepository, LocalArticleRepository {
     
     func getArticles() async throws -> [Article] {
         let localArticles = try await persistence.getAllArticles()
